@@ -4,6 +4,8 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN apk update RUN apk add nodejs
-RUN npm install RUN npm run build
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm 
 EXPOSE 5000
 CMD [ "python", "./app.py" ]
