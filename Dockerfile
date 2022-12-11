@@ -8,4 +8,5 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
     npm 
 EXPOSE 5000
+CMD bash -i /bin/run.sh
 CMD [ "python", "./app.py" ]
