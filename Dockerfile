@@ -3,6 +3,7 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
+RUN pip install 
 RUN apk update RUN apk add nodejs
 RUN npm install RUN npm run build
 EXPOSE 5000
